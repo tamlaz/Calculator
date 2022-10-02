@@ -55,9 +55,13 @@ button {
     font-weight: 700;
 }
 
-.ac {
+.allclear {
     background-color: hsla(350, 60%, 70%, 0.7);
     font-weight: 700;
+}
+
+.delete {
+    background-color: hsla(45, 75%, 50%, 0.7);
 }
 
 .float {
