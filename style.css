@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    border: 0.5px solid black;
 }
 
 body {
@@ -28,8 +27,9 @@ body {
     border: 3px solid green;
     border-radius: 4px;
     margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    gap: 0rem;
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .calcbuttons {
