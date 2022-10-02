@@ -13,7 +13,7 @@ body {
     top: 50%;
     left: 50%;
     margin-top: -250px;
-    margin-left: -270px;
+    margin-left: -200px;
     border: 10px solid lightgray;
     border-radius: 4px;
     max-height: 500px;
@@ -40,7 +40,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
 }
 
-button {
+input, button {
     background-color: rgba(50, 110, 170, 0.8);
     min-height: 50px;
     min-width: 80px;
