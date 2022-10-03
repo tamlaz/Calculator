@@ -48,7 +48,7 @@ input, button {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-.equal-grid-col-span-2 {
+.equal {
     grid-column: span 2;
     min-width: 167px;
     background-color: hsla(90, 60%, 30%, 0.9);
