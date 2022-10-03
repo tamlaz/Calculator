@@ -12,9 +12,9 @@ let firstNumber = '';
 const numbers = document.querySelectorAll(".numbers");
 numbers.forEach(number => {
     number.addEventListener('click', () => {
+        mathResult = '';
         storedNumber += number.value
         currentValueHolder.textContent += storedNumber;
-        displayResult();
     });
 });
 console.log(storedNumber);
@@ -25,7 +25,7 @@ operators.forEach(operator => {
     operator.addEventListener('click', () => {
         firstNumber = storedNumber;
         clickedOperator = operator.value;
-        currentValueHolder.textContent += clickedOperator;
+        prevValueHolder.textContent = storedNumber +clickedOperator;
         storedNumber = '';
     });
 });
@@ -63,7 +63,6 @@ const displayResult = () => {
     mathResult = operate(parseFloat(firstNumber), parseFloat(storedNumber), clickedOperator);
     currentValueHolder.textContent = mathResult;
     console.log(mathResult);
-    prevValueHolder.textContent = `${firstNumber} ${clickedOperator} ${storedNumber}`;
     storedNumber = '';
 };
 
