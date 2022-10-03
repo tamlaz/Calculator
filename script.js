@@ -9,12 +9,17 @@ displayTop.appendChild(prevValueHolder);
 let mathResult = '';
 let storedNumber = '';
 let firstNumber = '';
+currentValueHolder.textContent = 0;
 const numbers = document.querySelectorAll(".numbers");
 numbers.forEach(number => {
     number.addEventListener('click', () => {
+        storedNumber = '';
         mathResult = '';
         storedNumber += number.value
-        currentValueHolder.textContent += storedNumber;
+        prevValueHolder.textContent += storedNumber;
+        if (storedNumber && firstNumber) {
+            displayResult();
+        }
     });
 });
 console.log(storedNumber);
@@ -25,7 +30,7 @@ operators.forEach(operator => {
     operator.addEventListener('click', () => {
         firstNumber = storedNumber;
         clickedOperator = operator.value;
-        prevValueHolder.textContent = storedNumber +clickedOperator;
+        prevValueHolder.textContent = firstNumber + clickedOperator;
         storedNumber = '';
     });
 });
@@ -62,8 +67,9 @@ function operate(num1, num2, operator) {
 const displayResult = () => {
     mathResult = operate(parseFloat(firstNumber), parseFloat(storedNumber), clickedOperator);
     currentValueHolder.textContent = mathResult;
-    console.log(mathResult);
+    prevValueHolder.textContent = '';
     storedNumber = '';
+    firstNumber = '';
 };
 
 const btnEqual = document.querySelector('.equal');
