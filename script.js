@@ -13,25 +13,27 @@ currentValueHolder.textContent = 0;
 const numbers = document.querySelectorAll(".numbers");
 numbers.forEach(number => {
     number.addEventListener('click', () => {
-        storedNumber = '';
-        mathResult = '';
+        currentValueHolder.textContent = '';
         storedNumber += number.value
-        prevValueHolder.textContent += storedNumber;
-        if (storedNumber && firstNumber) {
-            displayResult();
-        }
-    });
+        currentValueHolder.textContent = storedNumber;
+    })
 });
-console.log(storedNumber);
 
 let clickedOperator = '';
 const operators = document.querySelectorAll(".operators");
 operators.forEach(operator => {
     operator.addEventListener('click', () => {
+        if (firstNumber && storedNumber) {
+            displayResult();
+          }
         firstNumber = storedNumber;
+        currentValueHolder.textContent = '';
         clickedOperator = operator.value;
-        prevValueHolder.textContent = firstNumber + clickedOperator;
+        prevValueHolder.textContent = storedNumber + '' + clickedOperator;
         storedNumber = '';
+        // if(storedNumber && firstNumber) {
+        //     displayResult();
+        // }
     });
 });
 
@@ -68,8 +70,7 @@ const displayResult = () => {
     mathResult = operate(parseFloat(firstNumber), parseFloat(storedNumber), clickedOperator);
     currentValueHolder.textContent = mathResult;
     prevValueHolder.textContent = '';
-    storedNumber = '';
-    firstNumber = '';
+    storedNumber = mathResult;
 };
 
 const btnEqual = document.querySelector('.equal');
