@@ -1,9 +1,10 @@
 * {
     box-sizing: border-box;
+    font-weight: 700;
 }
 
 body {
-    background-color: rgba(10, 10, 10, 0.8);
+    background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
     display: grid;
     place-items: center;
 }
@@ -22,7 +23,7 @@ body {
 }
 
 .resultbar {
-    height: 100px;
+    height: 80px;
     background-color: hsla(130, 90%, 80%, 0.2);
     border: 3px solid green;
     border-radius: 4px;
@@ -30,6 +31,14 @@ body {
     display: grid;
     gap: 0rem;
     grid-template-rows: repeat(2, 1fr);
+}
+
+.resultbar-top, .resultbar-bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'digital-7-mono', sans-serif;
 }
 
 .calcbuttons {
@@ -48,6 +57,14 @@ input, button {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+input:hover {
+    background-color: rgba(50, 110, 170, 0.1);
+}
+
+button:hover {
+    background-color: rgba(50, 110, 170, 0.1);
+}
+
 .equal {
     grid-column: span 2;
     min-width: 167px;
@@ -60,8 +77,17 @@ input, button {
     font-weight: 700;
 }
 
+.allclear:hover {
+    background-color: hsla(350, 60%, 70%, 0.1);
+}
+
 .delete {
     background-color: hsla(45, 75%, 50%, 0.7);
+    font-weight: 700;
+}
+
+.delete:hover {
+    background-color: hsla(45, 75%, 50%, 0.1);
 }
 
 .float {
