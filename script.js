@@ -46,7 +46,17 @@ function multiply(a,b) {
 }
 
 function divide(a,b) {
-    return a / b;
+    if (b === 0 || isNaN(b)) {
+        return 'ERROR';
+    } else {
+        return a / b;
+    }
+}
+
+function divideZero(a, b) {
+    if (result == Infinity) {
+        return currentValueHolder.textContent = 'ERROR';
+    } 
 }
 
 function operate(num1, num2, operator) {
@@ -73,6 +83,7 @@ const displayResult = () => {
 const btnEqual = document.querySelector('.equal');
 btnEqual.addEventListener('click', e => {
     displayResult();
+    divideZero();
 });
 
 const clearAll = () => {
