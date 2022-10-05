@@ -9,11 +9,10 @@ displayTop.appendChild(prevValueHolder);
 let mathResult = '';
 let storedNumber = '';
 let firstNumber = '';
-currentValueHolder.textContent = 0;
+// currentValueHolder.textContent = ;
 const numbers = document.querySelectorAll(".numbers");
 numbers.forEach(number => {
     number.addEventListener('click', () => {
-        currentValueHolder.textContent = '';
         storedNumber += number.value
         currentValueHolder.textContent = storedNumber;
     })
@@ -31,9 +30,6 @@ operators.forEach(operator => {
         clickedOperator = operator.value;
         prevValueHolder.textContent = storedNumber + '' + clickedOperator;
         storedNumber = '';
-        // if(storedNumber && firstNumber) {
-        //     displayResult();
-        // }
     });
 });
 
@@ -71,6 +67,7 @@ const displayResult = () => {
     currentValueHolder.textContent = mathResult;
     prevValueHolder.textContent = '';
     storedNumber = mathResult;
+    firstNumber = '';
 };
 
 const btnEqual = document.querySelector('.equal');
@@ -90,3 +87,30 @@ const btnClear = document.querySelector('.allclear');
 btnClear.addEventListener('click', e => {
     clearAll();
 });
+
+const clearLast = () => {
+    storedNumber = storedNumber.slice(0, -1);
+    currentValueHolder.textContent = storedNumber;
+    console.log(storedNumber);
+    console.log(typeof(storedNumber));
+};
+
+const btnDelete = document.querySelector('.delete');
+btnDelete.addEventListener('click', e => {
+    clearLast();
+});
+
+
+const makePercentage = () => {
+    storedNumber = storedNumber / 100;
+    currentValueHolder.textContent = storedNumber;
+};
+
+const btnPercent = document.querySelector('.percent');
+btnPercent.addEventListener('click', e => {
+    makePercentage();
+});
+
+// btnDelete.addEventListener('click', e => {
+//     btnDelete.style = 'background-color:hsla(45, 75%, 50%, 0.1)';
+// });
