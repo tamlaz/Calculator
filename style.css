@@ -1,12 +1,12 @@
 * {
     box-sizing: border-box;
-    font-weight: 700;
 }
 
 body {
-    background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
+    background: #edf3f4;
     display: grid;
     place-items: center;
+    font-weight: 700;
 }
 
 .container {
@@ -15,11 +15,13 @@ body {
     left: 50%;
     margin-top: -250px;
     margin-left: -200px;
-    border: 20px solid lightgray;
+    border: 1 solid lightgray;
+    padding: 0.2rem;
     border-radius: 10px;
     max-height: 500px;
     background-color: lightgray;
     min-width: 350px;
+
 }
 
 .resultbar {
